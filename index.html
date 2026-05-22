@@ -12,8 +12,8 @@
 </head>
 <body>
 
-    <div class="container">
-        <nav>
+    <nav>
+        <div class="container nav-container">
             <div class="logo">PUTRA<span>JUWANA</span></div>
             <ul class="nav-links">
                 <li><a href="#" onclick="filterByCategory('Semua')">Beranda</a></li>
@@ -21,20 +21,23 @@
                 <li><a href="#produk">Produk Populer</a></li>
                 <li><a href="#tentang-kami">Tentang Kami</a></li>
             </ul>
+            <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="searchInput" placeholder="Cari kebutuhan..." onkeydown="if(event.key === 'Enter') searchProducts()">
+            </div>
             <div class="nav-actions">
-                <div class="search-box">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <input type="text" id="searchInput" placeholder="Cari kebutuhan..." onkeydown="if(event.key === 'Enter') searchProducts()">
-                </div>
                 <div class="cart-trigger" style="position:relative; cursor:pointer" title="Keranjang" onclick="toggleCartDrawer()">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                     <span id="cartBadge" style="position:absolute; top:-5px; right:-5px; background:var(--primary); color:white; font-size:10px; padding:2px 5px; border-radius:50%">0</span>
                 </div>
-                <a href="login.html" title="Dashboard Admin" style="color: #64748B; transition: 0.3s;" onmouseover="this.style.color='#FF5C00'" onmouseout="this.style.color='#64748B'">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <a href="login.html" title="Dashboard Admin" class="admin-login-btn" style="color: #64748B; transition: 0.3s; display: flex; align-items: center;" onmouseover="this.style.color='#FF5C00'" onmouseout="this.style.color='#64748B'">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </a>
             </div>
-        </nav>
+        </div>
+    </nav>
+
+    <div class="container">
 
         <!-- Hero -->
         <section class="hero">
@@ -47,7 +50,7 @@
                 </div>
             </div>
             <div class="hero-img">
-                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" alt="Grocery">
+                <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=800" alt="Grocery">
                 <div class="floating-card">
                     <div style="background:var(--primary); color:white; padding:10px; border-radius:12px">⭐</div>
                     <div>
@@ -120,7 +123,7 @@
                     </div>
                 </div>
                 <div style="border-radius: 30px; overflow: hidden; box-shadow: var(--shadow);">
-                    <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&q=80&w=800" alt="Tentang Kami" style="width: 100%; display: block;">
+                    <img src="https://images.unsplash.com/photo-1511140973288-19bf21d7e771?auto=format&fit=crop&q=80&w=800" alt="Tentang Kami" style="width: 100%; display: block;">
                 </div>
             </div>
         </section>
@@ -133,7 +136,7 @@
                 <a href="#" class="btn-whatsapp" onclick="orderWhatsApp('Informasi Ongkir', '0')">Order via WhatsApp</a>
             </div>
             <div class="banner-img-circle">
-                <img src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?auto=format&fit=crop&q=80&w=600" alt="Market">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600" alt="Market">
             </div>
         </section>
     </div>
@@ -144,9 +147,13 @@
                 <div class="footer-about">
                     <h2>PUTRA<span>JUWANA</span></h2>
                     <p>Menyediakan produk berkualitas tinggi untuk masyarakat Prambanan dan sekitarnya sejak tahun 2009. Kepercayaan Anda adalah prioritas kami.</p>
-                    <div style="display:flex; gap:15px">
-                        <div style="width:40px; height:40px; background:#1E293B; border-radius:50%"></div>
-                        <div style="width:40px; height:40px; background:#1E293B; border-radius:50%"></div>
+                    <div style="display:flex; gap:15px; margin-top: 15px;">
+                        <a href="https://wa.me/628157985516" target="_blank" style="width:40px; height:40px; background:#1E293B; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; transition: 0.3s;" onmouseover="this.style.background='#FF5C00'" onmouseout="this.style.background='#1E293B'" title="Hubungi WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" style="width:40px; height:40px; background:#1E293B; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; transition: 0.3s;" onmouseover="this.style.background='#FF5C00'" onmouseout="this.style.background='#1E293B'" title="Kunjungi Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -237,14 +244,14 @@
 
     <script>
         const defaultProducts = [
-            { id: 1, name: "Beras Premium 5kg", price: "75.000", cat: "Sembako", stock: 5, img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400" },
-            { id: 2, name: "Minyak Goreng 2L", price: "34.000", cat: "Sembako", stock: 4, img: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" },
-            { id: 3, name: "Telur Ayam 1kg", price: "28.000", cat: "Sembako", stock: 10, img: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=400" },
-            { id: 4, name: "Kopi Giling Juwana", price: "45.000", cat: "Minuman", stock: 12, img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400" },
-            { id: 5, name: "Sayur Bayam Segar", price: "3.500", cat: "Sayuran", stock: 30, img: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400" },
-            { id: 6, name: "Sabun Cuci Piring", price: "15.000", cat: "Kebersihan", stock: 45, img: "https://images.unsplash.com/photo-1603507964919-4cb503348633?w=400" },
-            { id: 7, name: "Biskuit Gandum", price: "12.000", cat: "Makanan", stock: 5, img: "https://images.unsplash.com/photo-1558961363-fa4fb79697ed?w=400" },
-            { id: 8, name: "Susu Kotak 1L", price: "18.500", cat: "Minuman", stock: 9, img: "https://images.unsplash.com/photo-1563636619-e91082a11952?w=400" }
+            { id: 1, name: "Beras Premium 5kg", price: "75.000", cat: "Sembako", stock: 5, img: "https://images.unsplash.com/photo-1536304997881-a372c179924b?auto=format&fit=crop&q=80&w=400" },
+            { id: 2, name: "Minyak Goreng 2L", price: "34.000", cat: "Sembako", stock: 4, img: "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?auto=format&fit=crop&q=80&w=400" },
+            { id: 3, name: "Telur Ayam 1kg", price: "28.000", cat: "Sembako", stock: 10, img: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&q=80&w=400" },
+            { id: 4, name: "Kopi Giling Juwana", price: "45.000", cat: "Minuman", stock: 12, img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400" },
+            { id: 5, name: "Sayur Bayam Segar", price: "3.500", cat: "Sayuran", stock: 30, img: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=400" },
+            { id: 6, name: "Sabun Cuci Piring", price: "15.000", cat: "Kebersihan", stock: 45, img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&q=80&w=400" },
+            { id: 7, name: "Biskuit Gandum", price: "12.000", cat: "Makanan", stock: 5, img: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&q=80&w=400" },
+            { id: 8, name: "Susu Kotak 1L", price: "18.500", cat: "Minuman", stock: 9, img: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=400" }
         ];
 
         const defaultCategories = [
@@ -256,8 +263,8 @@
         ];
 
         const defaultPromotions = [
-            { id: 1, title: "Beras Premium Hemat", desc: "Belanja Beras Sleman Premium diskon akhir pekan, buruan borong!", discount: "Diskon 10%", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400" },
-            { id: 2, title: "Minyak Goreng Murah", desc: "Minyak goreng merk pilihan dengan harga super miring khusus pelanggan setia.", discount: "Hemat Rp 5.000", img: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" }
+            { id: 1, title: "Beras Premium Hemat", desc: "Belanja Beras Sleman Premium diskon akhir pekan, buruan borong!", discount: "Diskon 10%", img: "https://images.unsplash.com/photo-1536304997881-a372c179924b?auto=format&fit=crop&q=80&w=400" },
+            { id: 2, title: "Minyak Goreng Murah", desc: "Minyak goreng merk pilihan dengan harga super miring khusus pelanggan setia.", discount: "Hemat Rp 5.000", img: "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?auto=format&fit=crop&q=80&w=400" }
         ];
 
         // Setup direct in-memory copy (no localStorage persistence, ensuring complete reset on reload)
