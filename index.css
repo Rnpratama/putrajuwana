@@ -599,8 +599,8 @@ footer {
     .nav-links {
         display: none;
     }
-    nav .nav-actions a[href="login.html"] {
-        display: none; /* Disembunyikan karena sudah ada di bottom nav */
+    nav .nav-actions .admin-login-btn {
+        display: none !important; /* Disembunyikan karena sudah ada di bottom nav */
     }
     
     /* Responsive Header/Navbar */
