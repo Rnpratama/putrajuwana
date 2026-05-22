@@ -33,6 +33,18 @@
                 <a href="login.html" title="Dashboard Admin" class="admin-login-btn" style="color: #64748B; transition: 0.3s; display: flex; align-items: center;" onmouseover="this.style.color='#FF5C00'" onmouseout="this.style.color='#64748B'">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </a>
+                <div class="menu-toggle" id="menuToggleBtn" onclick="toggleMobileMenu()" style="cursor: pointer; display: none; align-items: center; color: #64748B;" title="Menu Navigasi">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </div>
+            </div>
+            <!-- Mobile Dropdown Menu -->
+            <div class="mobile-dropdown" id="mobileDropdown">
+                <ul class="mobile-dropdown-links">
+                    <li><a href="#" onclick="clickMobileMenu('#')">Beranda</a></li>
+                    <li><a href="#kategori" onclick="clickMobileMenu('#kategori')">Kategori</a></li>
+                    <li><a href="#produk" onclick="clickMobileMenu('#produk')">Produk Populer</a></li>
+                    <li><a href="#tentang-kami" onclick="clickMobileMenu('#tentang-kami')">Tentang Kami</a></li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -325,6 +337,34 @@
             if (drawer && backdrop) {
                 drawer.classList.toggle('open');
                 backdrop.classList.toggle('show');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const dropdown = document.getElementById('mobileDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('show');
+            }
+        }
+
+        function clickMobileMenu(href) {
+            const dropdown = document.getElementById('mobileDropdown');
+            if (dropdown) {
+                dropdown.classList.remove('show');
+            }
+            if (href === '#') {
+                filterByCategory('Semua');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (href === '#kategori') {
+                filterByCategory('Semua');
+                const target = document.getElementById('kategori');
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            } else if (href === '#produk') {
+                const target = document.getElementById('produk');
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            } else if (href === '#tentang-kami') {
+                const target = document.getElementById('tentang-kami');
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             }
         }
 
