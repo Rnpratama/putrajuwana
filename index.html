@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="hero-img">
-                <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=800" alt="Grocery">
+                <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=800" alt="Grocery" referrerpolicy="no-referrer">
                 <div class="floating-card">
                     <div style="background:var(--primary); color:white; padding:10px; border-radius:12px">⭐</div>
                     <div>
@@ -135,7 +135,7 @@
                     </div>
                 </div>
                 <div style="border-radius: 30px; overflow: hidden; box-shadow: var(--shadow);">
-                    <img src="https://images.unsplash.com/photo-1511140973288-19bf21d7e771?auto=format&fit=crop&q=80&w=800" alt="Tentang Kami" style="width: 100%; display: block;">
+                    <img src="https://images.unsplash.com/photo-1511140973288-19bf21d7e771?auto=format&fit=crop&q=80&w=800" alt="Tentang Kami" style="width: 100%; display: block;" referrerpolicy="no-referrer">
                 </div>
             </div>
         </section>
@@ -148,7 +148,7 @@
                 <a href="#" class="btn-whatsapp" onclick="orderWhatsApp('Informasi Ongkir', '0')">Order via WhatsApp</a>
             </div>
             <div class="banner-img-circle">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600" alt="Market">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600" alt="Market" referrerpolicy="no-referrer">
             </div>
         </section>
     </div>
@@ -475,7 +475,7 @@
                 total += itemTotal;
                 return `
                     <div class="cart-item">
-                        <img src="${item.img}" alt="${item.name}">
+                        <img src="${item.img}" alt="${item.name}" referrerpolicy="no-referrer">
                         <div class="cart-item-detail">
                             <h4>${item.name}</h4>
                             <div class="price">Rp ${formatRupiah(itemTotal)}</div>
@@ -517,7 +517,7 @@
                 <div class="product-card" style="box-shadow: var(--shadow); border: 1px solid #E2E8F0; border-radius: 24px; padding: 16px; background: white; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <div class="product-img" style="position: relative; border-radius: 16px; overflow: hidden; height: 160px; margin-bottom: 12px; cursor: pointer;" onclick="addToCart('${p.name}', '${p.price}', ${p.stock}, '${p.img}')">
-                            <img src="${p.img}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="${p.img}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;" referrerpolicy="no-referrer">
                         </div>
                         <h4 style="font-size: 15px; font-weight: 700; color: var(--secondary); margin-bottom: 4px; height: 44px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; cursor: pointer;" onclick="addToCart('${p.name}', '${p.price}', ${p.stock}, '${p.img}')">${p.name}</h4>
                         <div class="price" style="font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 8px;">Rp ${p.price}</div>
@@ -639,7 +639,7 @@
                             <p style="font-size: 12px; opacity: 0.95; margin-bottom: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-top: 0; color: white;">${promo.desc}</p>
                             <button class="btn" style="background: white; color: #FF5C00; border: none; padding: 6px 16px; font-size: 11px; border-radius: 50px; font-weight: 700; cursor: pointer; transition: 0.2s;" onclick="orderWhatsApp('Promo: ${promo.title.replace(/'/g, "\\'")}', 'Promo')">Pesan Sekarang</button>
                         </div>
-                        <img src="${imgUrl}" alt="${promo.title}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 16px; z-index: 2; border: 3px solid rgba(255,255,255,0.3); box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                        <img src="${imgUrl}" alt="${promo.title}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 16px; z-index: 2; border: 3px solid rgba(255,255,255,0.3); box-shadow: 0 4px 10px rgba(0,0,0,0.1);" referrerpolicy="no-referrer">
                         <div style="position: absolute; right: -20px; top: -20px; width: 150px; height: 150px; background: rgba(255,255,255,0.06); border-radius: 50%;"></div>
                     </div>
                 `;
