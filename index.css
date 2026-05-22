@@ -613,7 +613,7 @@ footer {
     .nav-container {
         display: grid !important;
         grid-template-columns: 1fr auto !important;
-        grid-template-rows: auto auto auto !important;
+        grid-template-rows: auto auto !important;
         align-items: center !important;
         gap: 12px 0 !important;
         padding: 12px 16px !important; /* 16px horizontal spacing to avoid touching screen edges */
@@ -665,17 +665,19 @@ footer {
     }
 
     .mobile-dropdown {
-        grid-column: 1 / span 2 !important;
-        grid-row: 3 !important;
-        display: none !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
         width: 100% !important;
-        background: #f8fafc !important;
-        border-radius: 12px !important;
-        border: 1px solid rgba(226, 232, 240, 0.8) !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border-bottom: 2px solid rgba(241, 245, 249, 0.9) !important;
+        display: none;
         padding: 4px 0 !important;
-        margin-top: 8px !important;
-        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important;
-        animation: slideDownMenu 0.25s ease-out !important;
+        box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08) !important;
+        z-index: 2000 !important;
+        animation: slideDownMenu 0.23s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     
     .mobile-dropdown.show {
